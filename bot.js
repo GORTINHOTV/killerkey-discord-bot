@@ -33,7 +33,7 @@ const client = new Client({
 });
 
 client.once(Events.ClientReady, (c) => {
-  console.log(`✅ Logged in as ${c.user.tag}`);
+  console.log(`Logged in as ${c.user.tag}`);
 });
 
 client.on(Events.MessageCreate, async (msg) => {
@@ -55,12 +55,12 @@ client.on(Events.MessageCreate, async (msg) => {
     const data = await res.json();
 
     if (!res.ok) {
-      await msg.reply(`❌ ${data.error ?? "Falha ao gerar key"}`);
+      await msg.reply(` ${data.error ?? "Falha ao gerar key"}`);
       return;
     }
 
     const embed = new EmbedBuilder()
-      .setTitle("🔑 KillerKey — Sua key de 1 dia")
+      .setTitle("Safyra Key — Sua key de 1 dia")
       .setColor(0x8b5cf6)
       .setDescription("Chave gerada com sucesso. Válida por 24h.")
       .addFields(
@@ -71,13 +71,13 @@ client.on(Events.MessageCreate, async (msg) => {
 
     try {
       await msg.author.send({ embeds: [embed] });
-      await msg.reply("📩 Enviei sua key na DM!");
+      await msg.reply("Enviei sua key na DM!");
     } catch {
       await msg.reply({ embeds: [embed] });
     }
   } catch (err) {
     console.error(err);
-    await msg.reply("❌ Erro de rede ao contatar o KillerKey.");
+    await msg.reply("Erro de rede ao contatar o KillerKey.");
   }
 });
 
