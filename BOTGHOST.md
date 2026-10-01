@@ -25,10 +25,10 @@ Projeto → **Discord bot** → **Generate token** → copie o `kkbot_...`.
 
 3. Adicione uma ação **Conditional → If Variable**:
    - Se `{kkresp_success}` = `true` → **Send Embed**:
-     - Título: `🔑 KillerKey — Key de 1 dia`
+     - Título: `Safyra Keyless — Key de 1 dia`
      - Descrição: `{kkresp_message}`
      - Campo `Expira em`: `<t:{kkresp_expires_at_unix}:R>`
-     - **Ephemeral:** ✅ (só o usuário vê)
+     - **Ephemeral:**  (só o usuário vê)
    - Senão → **Send Message** (ephemeral): `{kkresp_message}`
 
 Pronto. Cooldown, geração de key e expiração ficam por conta do KillerKey.
